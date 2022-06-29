@@ -57,31 +57,31 @@ In this example, masks are visualized in the following scenarios.
 
 ![Diagram of scenario 1](orientation_diagrams/wardrobe_1.png)
 
-For every possible angle $\alpha_{w}$ calculate the (CCW) angle $\alpha_{o}$ required to rotate object such that its semantic front is aligned with the wall. Use this rotated object and the wall with surface normal $\alpha_{w}$ from `[1, 0]` to predict the location. Place these predicted locations in the slice at $\alpha_{o}$. 
+For every possible angle calculate the (CCW) angle required to rotate object such that its semantic front is aligned with the wall. Use this rotated object and the wall with surface normal to predict the location. Place these predicted locations into the slice that corresponds with the angle required to rotate the object to align its semantic front with the wall.  
 
 ### Scenario 2
 
 ![Diagram of scenario 2 attachment](orientation_diagrams/wardrobe_2_attach.png)
 
-For every possible angle $\alpha_{w}$ consider every possible orientation of the object $\alpha_{o}$ and constrain the location of the object so that the object is attached to the wall. 
+For every possible angle consider every possible orientation of the object and constrain the location of the object so that the object is attached to the wall. 
 
 ![Diagram of scenario 2 alignment](orientation_diagrams/wardrobe_2_align.png)
 
-For every possible angle $\alpha_{w}$ calculate the angle $\alpha_{o}$ required to rotate the object so that its semantic front is aligned with the wall, and record all valid placements for the given object. 
+For every possible angle calculate the angle required to rotate the object so that its semantic front is aligned with the wall, and record all valid placements for the given object into the data structure. 
 
 ![Diagram of scenario 2 combination](orientation_diagrams/wardrobe_2_combine.png)
 
-Find the intersection between the two masks. There seems to be a problem with our data structure and/or process as the final mask does not make sense. The process would look more correct if the output masks at each step were not accumulated together but kept seperate. For example, in the case of producing the `attach` mask, the results at each step of considering $\alpha_{w}$ should not accumulate. This is the motivation behind adding another dimension to the datastructure. 
+Find the intersection between the two masks. There seems to be a problem with our data structure and/or process as the final mask does not make sense. The process would look more correct if the output masks at each step were not accumulated together but kept seperate. For example, in the case of producing the `attach` mask, the results at each step should not accumulate. This is the motivation behind adding another dimension to the datastructure. 
 
 ### Scenario 3
 
 ![Diagram of scenario 3 attachment](orientation_diagrams/wardrobe_3_attach.png)
 
-Repeat the same process of attachment as scenario 2 attachment, except write the results into the 3D data structure at $\alpha_{w}$ in our 4D datastructure. 
+Repeat the same process of attachment as scenario 2 attachment, except write the results into the 3D data structure in our 4D datastructure. 
 
 ![Diagram of scenario 3 attachment](orientation_diagrams/wardrobe_3_align.png)
 
-Repeat the same process of attachment as scenario 2 alignment, except write the results into the 3D data structure at $\alpha_{w}$ in our 4D datastructure. 
+Repeat the same process of attachment as scenario 2 alignment, except write the results into the 3D data structure in our 4D datastructure. 
 
 ![Diagram of scenario 3 combine](orientation_diagrams/wardrobe_3_combine.png)
 
