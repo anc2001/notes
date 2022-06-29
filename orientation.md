@@ -57,17 +57,17 @@ In this example, masks are visualized in the following scenarios.
 
 ![Diagram of scenario 1](orientation_diagrams/wardrobe_1.png)
 
-For every possible angle $\alpha_{w}$, calculate the (CCW) angle $\alpha_{o}$ required to rotate object such that its semantic front is aligned with the wall. Use this rotated object and the wall with surface normal $\alpha_{w}$ from `[1, 0]` to predict the location. Place these predicted locations in the slice at $\alpha_{o}$. 
+For every possible angle $\alpha_{w}$ calculate the (CCW) angle $\alpha_{o}$ required to rotate object such that its semantic front is aligned with the wall. Use this rotated object and the wall with surface normal $\alpha_{w}$ from `[1, 0]` to predict the location. Place these predicted locations in the slice at $\alpha_{o}$. 
 
 ### Scenario 2
 
 ![Diagram of scenario 2 attachment](orientation_diagrams/wardrobe_2_attach.png)
 
-For every possible angle $\alpha_{w}$, consider every possible orientation of the object $\alpha_{o}$ and constrain the location of the object so that the object is attached to the wall. 
+For every possible angle $\alpha_{w}$ consider every possible orientation of the object $\alpha_{o}$ and constrain the location of the object so that the object is attached to the wall. 
 
 ![Diagram of scenario 2 alignment](orientation_diagrams/wardrobe_2_align.png)
 
-For every possible angle $\alpha_{w}$, calculate the angle $\alpha_{o}$ required to rotate the object so that its semantic front is aligned with the wall, and record all valid placements for the given object. 
+For every possible angle $\alpha_{w}$ calculate the angle $\alpha_{o}$ required to rotate the object so that its semantic front is aligned with the wall, and record all valid placements for the given object. 
 
 ![Diagram of scenario 2 combination](orientation_diagrams/wardrobe_2_combine.png)
 
