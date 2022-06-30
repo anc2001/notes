@@ -127,3 +127,24 @@ This final mask makes sense.
 * `align(bed)`: This mask illustrates the case of what to do when there is no semantic front in every direction. It seems that the best thing to do in this case is just use the only semantic front of the object. 
 
 ## Place chair in living room context
+This example is to showcase what the masks look like in a more complex program setting. 
+### Program
+
+```
+o_constraint_1 = face(cabinet)
+o_constraint_2 = face(table)
+l_constraint_1 = reachable_by_arm(sofa, LEFT | RIGHT)
+l_constraint_2 = walkable_between(table, LEFT | RIGHT) 
+
+option_1 = l_constraint_1 && o_constraint_1
+option_2 = l_constraint_2 && (o_constraint_1 || o_constraint_2)
+final_mask = option_1 || option_2
+```
+### Room and Object
+![Room and object](orientation_diagrams/living_room_setting.png)
+
+### Masks
+![Masks_1](orientation_diagrams/living_room_masks_1.png)
+
+![Masks_2](orientation_diagrams/living_room_masks_2.png)
+
