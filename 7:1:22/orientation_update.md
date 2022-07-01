@@ -14,9 +14,9 @@ Syntax
  ## Mask generation
 `constraint operator constraint`
 
-Each 2D location slice of `shape = (dimension, dimension)` corresponds to a possible orientation of the object. For each possible orientation `a_o`, evaluate the two constraints and the operator to produce a single 2D slice. Evaluation of the constraints involves solving the constraint given the object orientation `a_o` for each possible direction objects face in the room. The masks for each constraint is then combined with the operator and finally unioned together to produce the final output slice. 
+Each 2D location slice of `shape = (dimension, dimension)` in the final mask corresponds to a possible orientation of the object. For each possible orientation `a_o`, evaluate the two constraints and the operator to produce a single 2D slice. Evaluation of the constraints involves solving the constraint given the object orientation `a_o` for each possible direction objects face in the room. The masks for each constraint is then combined with the operator and finally unioned together to produce the final output slice. 
 
-**Note:** If we impose another restriction on the syntax of mask generation stating that one constraint must be a location constraint and one must be an orientation constraint and have the operator always be an intersection, then we can do Kai's little optimization trick of not even computing the mask for invalid orientations. 
+**Note:** If we impose another restriction on the syntax of mask generation stating that one constraint must be a location constraint and one must be an orientation constraint and have the operator always be an intersection, then we can do Kai's little optimization trick of not even computing the mask for invalid orientations and only compute the location constraint for the valid angles. 
 
 ## Reading Diagrams
 ### Left side
@@ -24,13 +24,28 @@ The left side shows the process for generating the 2D location slice for every p
 
 Column 1 shows the room encoding. Column 2 shows solving for the first constraint, and Column 3 solving for second constraint. Column 4 shows result of applying the operator row wise to each of the 2D slices resulting from the constraint solving. 
 
+The angle value at the top represents the assumed orientation of the object when solving the constraints. 
+
 ### Right side 
-The right side shows the generated mask. Each row corresponds to the angle of rotation of the object itself and the 2D slices in the 3D mask. 
+The right side shows the generated mask. Each row corresponds to the angle of rotation of the object itself. The highlighted 2D slice in the 3D mask is the assumed angle from the left side of the diagram. 
+
+### Clarification on solving the orientation constraints
+`object_to_place` is given and so is its orientation 
+
+`object` is the argument to the orientation is constraint
+
+For every possible angle `a_r` from `[1, 0]` 
+ * Check if `object` has a semantic front that points at an angle `a_r` from `[1, 0]`
+    * Yes: If the semantic front of `object_to_place` points in the same (opposite for `face`) direction of `[1,0]` rotated by `a_r` CCW, consider this angle `a_r` as a valid orientation for placement and mask all possible locations. 
+    * No: If the semantic `object_to_place` points in the same (opposite for `face`) direction as the semantic front of `object`, consider this angle `a_r` as a valid orientation for placement and mask all possible locations.
 
 # Revisiting previous situations with new method
 ## Attach wardrobe to wall
 ### Room and object
-Wardrobe with semantic front in direction `[1, 0]`
+* Wardrobe with semantic front in direction `[1, 0]`
+```
+attach(wall) && align(wall)
+```
 
 ![lorem ipsum](diagrams/wardrobe_room_setting.png)
 ### Masks
@@ -45,6 +60,9 @@ Wardrobe with semantic front in direction `[1, 0]`
 
 ### Room and object
 Wardrobe with semantic front in direction `[0, -1]`
+```
+attach(wall) && align(wall)
+```
 
 ![lorem ipsum](diagrams/wardrobe_rot_setting.png)
 ### Masks
