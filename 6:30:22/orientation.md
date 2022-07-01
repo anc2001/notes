@@ -1,4 +1,4 @@
-# Data Structure Update
+# 6/30/22 Data Structure Update
 ## Conventions and definitions
 The following sections walk through different program examples and gives visualizations of what the datastructure should look like at every step of each example program. In all examples the following conventions and definitions are used. 
 
@@ -14,7 +14,7 @@ Wall normals always point towards the inside of the room
 `dimension` is the number of cells to discretize the spatial domain by. 
 * 3D data structure is an array of `shape = (num_angles, dimension, dimension)`
 
-* 4D data structure is an array of `shape = (num_angles, num_angles dimension, dimension)` 
+* 4D data structure is an array of `shape = (num_angles, num_angles, dimension, dimension)` 
 
 ### Grammar with Independence Assumption
 The object to place is omitted from the grammar because it is already assumed that it is the only object to consider placing, so there is only one option for that argument 
