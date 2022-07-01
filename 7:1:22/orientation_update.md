@@ -20,16 +20,12 @@ Each 2D location slice of `shape = (dimension, dimension)` in the final mask cor
 
 ## Reading Diagrams
 ### Left side
-The left side shows the process for generating the 2D location slice for every possible orientation of the object. Each row labelled with angle `a_r` corresponds with which faces of objects in the room have normals at an angle `a_r` from `[1, 0]` in the room. 
-
-Column 1 shows the room encoding. Column 2 shows solving for the first constraint, and Column 3 solving for second constraint. Column 4 shows result of applying the operator row wise to each of the 2D slices resulting from the constraint solving. 
-
-The angle value at the top represents the assumed orientation of the object when solving the constraints. 
+The left side shows the process for generating the 2D location slice. Each row labelled with angle `a_r` corresponds with which faces of objects in the room have normals at an angle `a_r` from `[1, 0]` in the room. Column 1 shows the room encoding. Column 2 shows solving for the first constraint, and Column 3 solving for second constraint. Column 4 shows the result of applying the operator row wise to each of the 2D slices resulting from the constraint solving. The angle value at the top represents the assumed orientation of the object when solving the constraints. 
 
 ### Right side 
-The right side shows the generated mask. Each row corresponds to the angle of rotation of the object itself. The highlighted 2D slice in the 3D mask is the assumed angle from the left side of the diagram. 
+The right side shows the generated mask. Each row corresponds to the angle of rotation of the object itself. The highlighted 2D slice in the 3D mask corresponds with the assumed angle from the left side of the diagram. 
 
-### Clarification on solving the orientation constraints
+## Clarification on solving the orientation constraints
 `object_to_place` is given and so is its orientation 
 
 `object` is the argument to the orientation is constraint
@@ -41,8 +37,8 @@ For every possible angle `a_r` from `[1, 0]`
 
 # Revisiting previous situations with new method
 ## Attach wardrobe to wall
-### Room and object
-* Wardrobe with semantic front in direction `[1, 0]`
+### Setup 1
+Wardrobe with semantic front in direction `[1, 0]`
 ```
 attach(wall) && align(wall)
 ```
@@ -58,7 +54,7 @@ attach(wall) && align(wall)
 
 ![lorem ipsum](diagrams/wardrobe_4.png)
 
-### Room and object
+### Setup 2
 Wardrobe with semantic front in direction `[0, -1]`
 ```
 attach(wall) && align(wall)
@@ -73,7 +69,9 @@ attach(wall) && align(wall)
 ![lorem ipsum](diagrams/wardrobe_rot_3.png)
 
 ![lorem ipsum](diagrams/wardrobe_rot_4.png)
+
 ## Place chair at table
+### Setup 
 
 ## Place nightstand by bed
 
