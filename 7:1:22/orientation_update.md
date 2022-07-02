@@ -6,6 +6,7 @@ The only instantiated variables in the language are `masks`. Masks are represent
 Syntax 
  * `mask = constraint operator constraint`
     * Details below
+    * This could also take the form of `(constraint operator constraint operator, constraint ...)` but I think that is unnecessary
  * `mask = mask operator mask`
     * Simple CSG 
  * `mask = macro(mask)`
@@ -33,7 +34,8 @@ The right side shows the generated mask. Each row corresponds to the angle of ro
 For every possible angle `a_r` from `[1, 0]` 
  * Check if `object` has a semantic front that points at an angle `a_r` from `[1, 0]`
     * Yes: If the semantic front of `object_to_place` points in the same (opposite for `face`) direction of `[1,0]` rotated by `a_r` CCW, consider this angle `a_r` as a valid orientation for placement and mask all possible locations. 
-    * No: If the semantic `object_to_place` points in the same (opposite for `face`) direction as the semantic front of `object`, consider this angle `a_r` as a valid orientation for placement and mask all possible locations.
+    * No: If the semantic `object_to_place` points in the same (opposite for `face`) direction as the semantic front of `object`, consider this angle `a_r` as a valid orientation for placement and mask all possible locations. 
+        * This is done to account for the case that an object's location may be attached to a face that is not a semantic front. 
 
 # Revisiting previous situations with new method
 ## Attach wardrobe to wall
@@ -72,10 +74,35 @@ attach(wall) && align(wall)
 
 ## Place chair at table
 ### Setup 
+```
+attach(table) && face(table)
+```
+![lorem ipsum](diagrams/table_setting.png)
+
+### Masks
+![lorem ipsum](diagrams/table_1.png)
+
+![lorem ipsum](diagrams/table_2.png)
+
+![lorem ipsum](diagrams/table_3.png)
+
+![lorem ipsum](diagrams/table_4.png)
 
 ## Place nightstand by bed
+The only masks shown for this case is when the object has rotation $3\pi / 2$ because it is the only case where non empty masks are generated and written to the final mask. In all other cases of possible object orientations, the orientation mask is empty. 
 
+![lorem ipsum](diagrams/nightstand_bed.png)
 ## Place chair in living room context 
- 
+### Setup 
+```
+option_1 = reachable_by_arm(sofa, LEFT | RIGHT) && face(cabinet)
+option_2 = walkable_between(table, LEFT | RIGHT) && face(table)
+option_3 = walkable_between(table, LEFT | RIGHT) && face(cabinet)
+final_mask = option_1 || option_2 || option_3
+```
 
+![lorem ipsum](diagrams/living_room_setting.png)
+
+### Masks 
+#### Read the diagram shorthand 
 
