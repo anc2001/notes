@@ -1,5 +1,5 @@
-# 7/1/22 - Data Structure Update
-[Conventions and definitions](../6%3A30%3A22/orientation.md) are the same, but here are a few more definitions that build upon the previous ones, and a new procedure for evaluation. Shown in this document are the same examples except with the new procedure and definitions 
+# 7/1/22 - 7/3/22: Data Structure Update
+[Conventions and definitions](../6%3A30%3A22/orientation.md) are the same, but here are a few more definitions that build upon the previous ones, and a new procedure for evaluation. Shown in this document are the same examples except with the new procedure and definitions. This [section](#new-situations) presents some new examples. 
 
 The only instantiated variables in the language are `masks`. Masks are represented as a 3D array of `shape = (num_angles, dimension, dimension)`. 
 
@@ -104,5 +104,22 @@ final_mask = option_1 || option_2 || option_3
 ![lorem ipsum](diagrams/living_room_setting.png)
 
 ### Masks 
-#### Read the diagram shorthand 
+All diagrams shown are in an abbreviated style to save time and space. The meaning of each row remains the same except the room encoding is omitted and so is insertion into the datastructure. The final output mask for each possible object orientation is shown above the third column rather than to the side. 
 
+option_1
+
+![lorem ipsum](diagrams/living_room_option_1.png)
+
+option_2
+
+![lorem ipsum](diagrams/living_room_option_2.png)
+
+option_3
+
+![lorem ipsum](diagrams/living_room_option_3.png)
+
+final_maks
+
+![lorem ipsum](diagrams/living_room_final_mask.png)
+
+# New situations
