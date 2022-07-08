@@ -3,7 +3,7 @@ Shown is the implementation of the language redesign and the new datastructure. 
 
 All images are 256 x 256
 ## Reading diagrams
-**Note:** Apologies on how small the encoding display is in the visualization 
+**Note:** Apologies on the visualizations this time, not as clean as last update 
 
 I've decided to present everything in a horizontal format. Now each column represents a different bin of angular histogram (if 5 columns are present, the leftmost is the full room encoding). Left to right is in increasing value of the angle. Rows represent each different mask. For the larger diagrams, the rows are as follows 
  * constraint 1
@@ -132,3 +132,7 @@ Possible object orientation = `3pi/2`
 Final mask 
 
 ![lorem ipsum](diagrams/nightstand_bed/final.png)
+
+# Personal notes 
+* What do in the case of a wall that is not perfectly binned by the angle histogram? 
+* Reference to objects is not standardized nicely -> standardize it nicely soon :) 
