@@ -5,7 +5,11 @@ All images are 256 x 256
 ## Reading diagrams
 **Note:** Apologies on how small the encoding display is in the visualization 
 
-I've decided to present everything in a horizontal format. Now each column represents a different bin of angular histogram (if 5 columns are present, the leftmost is the full room encoding). Left to right is in increasing value of the angle. Rows represent each different mask. 
+I've decided to present everything in a horizontal format. Now each column represents a different bin of angular histogram (if 5 columns are present, the leftmost is the full room encoding). Left to right is in increasing value of the angle. Rows represent each different mask. For the larger diagrams, the rows are as follows 
+ * constraint 1
+ * constraint 2
+ * mask after operator applied to both 
+ * collapsed final mask 
 
 For room encodings that display the current objects in the room, the color coding is as follows. 
  * `walls - black`
@@ -60,6 +64,40 @@ Some samples with semantic front shown in green
 ![lorem ipsum](diagrams/attach_wall_1/7.png)
 ![lorem ipsum](diagrams/attach_wall_1/8.png)
 ![lorem ipsum](diagrams/attach_wall_1/9.png)
+
+## Attach chair to table 
+Room layout and encoding
+
+![lorem ipsum](diagrams/table/layout.png)
+
+Chair semantic front pointing in direction `[1,0,0]`
+
+Program 
+```
+attach(table) && face(table)
+```
+
+Constraint solve
+
+Possible object orientation = `0`
+
+![lorem ipsum](diagrams/table/solve_0.png)
+
+Possible object orientation = `pi/2`
+
+![lorem ipsum](diagrams/table/solve_1.png)
+
+Possible object orientation = `pi`
+
+![lorem ipsum](diagrams/table/solve_2.png)
+
+Possible object orientation = `3pi/2`
+
+![lorem ipsum](diagrams/table/solve_3.png)
+
+Final mask 
+
+![lorem ipsum](diagrams/table/final.png)
 
 ## Attach nightstand to bed 
 Room layout and encoding
