@@ -26,6 +26,8 @@ Room layout and encoding (thin black line is the wall)
 
 Wardrobe semantic front pointing in direction `[0,0,1]`
 
+![lorem ipsum](diagrams/attach_wall_1/object_to_place.png)
+
 Program 
 ```
 attach(wall) && align(wall)
@@ -72,6 +74,8 @@ Room layout and encoding
 
 Chair semantic front pointing in direction `[1,0,0]`
 
+![lorem ipsum](diagrams/table/object_to_place.png)
+
 Program 
 ```
 attach(table) && face(table)
@@ -105,6 +109,8 @@ Room layout and encoding
 ![lorem ipsum](diagrams/nightstand_bed/layout.png)
 
 Nightstand semantic front pointing in direction `[1,0,0]`
+
+![lorem ipsum](diagrams/nightstand_bed/object_to_place.png)
 
 Program 
 ```
