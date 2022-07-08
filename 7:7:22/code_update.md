@@ -57,3 +57,40 @@ Some samples with semantic front shown in green
 ![lorem ipsum](diagrams/attach_wall_1/4.png)
 ![lorem ipsum](diagrams/attach_wall_1/5.png)
 ![lorem ipsum](diagrams/attach_wall_1/6.png)
+![lorem ipsum](diagrams/attach_wall_1/7.png)
+![lorem ipsum](diagrams/attach_wall_1/8.png)
+![lorem ipsum](diagrams/attach_wall_1/9.png)
+
+## Attach nightstand to bed 
+Room layout and encoding
+
+![lorem ipsum](diagrams/nightstand_bed/layout.png)
+
+Nightstand semantic front pointing in direction `[1,0,0]`
+
+Program 
+```
+reachable_by_arm(bed, LEFT | RIGHT) && align(bed)
+```
+
+Constraint solve
+
+Possible object orientation = `0`
+
+![lorem ipsum](diagrams/nightstand_bed/solve_0.png)
+
+Possible object orientation = `pi/2`
+
+![lorem ipsum](diagrams/nightstand_bed/solve_1.png)
+
+Possible object orientation = `pi`
+
+![lorem ipsum](diagrams/nightstand_bed/solve_2.png)
+
+Possible object orientation = `3pi/2`
+
+![lorem ipsum](diagrams/nightstand_bed/solve_3.png)
+
+Final mask 
+
+![lorem ipsum](diagrams/nightstand_bed/final.png)
