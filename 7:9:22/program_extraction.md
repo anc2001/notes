@@ -47,5 +47,23 @@ Objects that hold objects
  * `{'table', 'cabinet/shelf/desk'}`
 
 ### Naive Procedure 
+For every object, remove it from the room and choose its program based on its original position in the room. 
+
+Choose which objects to include in constraint arguments by looking in the general vicinity of the object (walls included)
+
+Location constraints - for each object choose between `attach` and `reachable_by_arm`
+ * If the object seems to be very close choose `attach`, otherwise choose `reachable_by_arm`
+
+Orientation constraints - for each object choose between `align` and `face`
+ * Do this by looking at the object categories of the object currently in the room and the object to place. 
+
+Case of no valid constraints -> just specify any direction and orientation 
+
+Resampling of the room -> just arbitrarily define an order? 
+
+### Questions 
+
+
+Orientati
 
 ## Network Architecture 
