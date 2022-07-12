@@ -1,6 +1,7 @@
 # Program Exraction
 ## Slack Review 
 **Abbreivated Version of Daniel's Original Post**
+
 Rather than devising a procedure up-front for extracting programs from scenes to create the ‘optimal’ program for each object insertion task (i.e. not overly specific, not overly general), we should (a) write a naive procedure for extracting programs from scenes (For the object to be inserted, create the program which consists of all possible constraints which could apply) and (b) try training a neural network to generate these programs. It seems premature to do any kind of pattern analysis to pre-process the training data before seeing how a network behaves when trained on naive programs. 
 
 If designed appropriately, the network should be able to generalize somewhat and produce programs which are more general than the training data. From Kai’s prior work, we know that networks can do some of this kind of generalization if they’re sufficiently regularized. So it will be interesting to see what sort of generalization behavior we observe when we switch from trying to predict a continuous distribution of possible placement locations to predicting a discrete program. Based on what behavior we see here, we may then decide we need to do some further pattern analysis as a pre-process for the training data. 
@@ -16,12 +17,7 @@ If designed appropriately, the network should be able to generalize somewhat and
 **Daniel:** I had an idea for trying to find ‘the right’ program for an object insertion task, given multiple candidate programs (e.g. trying to figure out which constraints should be included out of all possible constraints, or even trying to figure out which sample from a generative model of programs is the best). We could take the program, generate a bunch of object placements according to it, and then try to assess how well those samples match what’s in our dataset. Ideally we’d pick the program such that (a) all of its samples look like they come from the same distribution as the dataset, and (b) the samples have high internal diversity (i.e. we’re not just generating the same placement over and over again). (a) and (b) can be in conflict, so there’s some choice of hyperparameter to trade off how much we care about one versus the other.
 
 ## Designing the Naive Program 
-For now, only deal with the object categories 
- * `wardrobe`
- * `bed`
- * `nightstand`
- * `desk`
- * `chair`
+For now, only deal with the object categories `{wardrobe, bed, nightstand, desk, chair}`
 
 ### Available syntax and constraints
 Number of bins for angular domain = 4
@@ -39,18 +35,7 @@ Implemented orientation constraints
  * `face(Object)`
 
 ### Naive Procedure 
-For every object, remove it from the room and choose its program based on its original position in the room. 
+Add after coding it lol
 
-Choose which objects to include in constraint arguments by looking in the general vicinity of the object (walls included)
 
-Location constraints - for each object choose between `attach` and `reachable_by_arm`
- * If the object seems to be very close choose `attach`, otherwise choose `reachable_by_arm`
-
-Orientation constraints - for each object choose between `align` and `face`
- * Do this by looking at the object categories of the object currently in the room and the object to place. 
-
-Case of no valid constraints -> just specify any direction and orientation 
-
-Resampling of the room -> just arbitrarily define an order? 
-x
 ## Network Architecture 
