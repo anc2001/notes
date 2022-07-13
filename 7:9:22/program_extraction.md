@@ -47,6 +47,7 @@ For every object in local vicinity to the current held out object - try and prod
 
 Another option for deciding what exact relative directions should be given is to get the world space direction, and then based on the non held out object's rotation convert this direction to object space. 
 
+### Hypothesizing 
 **Intermediate update (7/13/22)** 
 <details open>
 <summary>Note</summary>
@@ -74,3 +75,8 @@ But there are also significant number of rooms where are nightstands appear on t
 ![lorem ipsum](diagrams/127-Bedroom-68029.png)
 
 Generating the superset of location constraints that could apply to placing a nighstand would probably appear to be something like `attach(bed, RIGHT | LEFT| TOP | BOTTOM), reachable_by_arm(bed, RIGHT | LEFT| TOP | BOTTOM)` + some constraints relating to other objects. Results like that make some sense to me. I can see nightstands appearing at the foot of a bed and maybe to a lesser degree at the head of the bed. The key thing that I think would invalidate this kind of result is that those constraints didn't appear because a nighstand appeared at the foot of the bed or at the head of the bed. Those constraints appeared because the way directions are specified for location constraints aren't dependent on the semantic fronts of objects. 
+
+I think changing the definition to something like this makes sense 
+ * `location_constraint(Object from, Object to, List<Directions>)` 
+
+Also if this change is implemented, program extraction can really only happen if the objects have their semantic fronts labelled. 
