@@ -19,9 +19,7 @@ If designed appropriately, the network should be able to generalize somewhat and
 ## Designing the Naive Program 
 For now, only deal with the object categories `{wardrobe, bed, nightstand, desk, chair}`
 
-### Available syntax and constraints
-Number of bins for angular domain = 4
-
+Available syntax and constraints
 Syntax
  * `mask = location_constraint operator orientation_constraint`
  * `mask = mask operator mask`
@@ -35,7 +33,19 @@ Implemented orientation constraints
  * `face(Object)`
 
 ### Naive Procedure 
-Add after coding it lol
+For every object category and for every room with at least one instance of this object category: 
 
+Infer every possible location constraint by looking at what other objects are in close proximity to an object with this category. If there are multiple instances of objects with this category in the room, produce location constraints for each one. For each possible location constraint, pair it with an orientation constraint referring to the same object and infer whether to use `align` or `face` by object category. 
 
-## Network Architecture 
+**Note**
+
+Employing this restriction introduces an inductive bias that the orientation of an object is/can only be specified in relation to objects that are close in proximity to it. My reasoning for doing this (for now at least) is that objects do not have labelled semantic fronts (for now). It makese more sense to me to try an extract an orientation constraint based on geometric heuristics when the world space semantic fronts of all the objects are known. Trying to extract orientation constraints from all other objects in the room with only category will (IMO) result in more spurious constraints than ones that actually carry more semantic meaning/may represent a general design principle of the dataset. Also it might make more sense to predict an orientation constraint after a location constraint because it seems easier to infer. 
+
+Predicting location: 
+
+Orientation rules for each object category 
+ * `wardrobe` - 
+ * `bed` - 
+ * `nightstand` - 
+ * `desk` - 
+ * `chair` - 
