@@ -37,15 +37,21 @@ For every object category and for every room with at least one instance of this 
 
 Infer every possible location constraint by looking at what other objects are in close proximity to an object with this category. If there are multiple instances of objects with this category in the room, produce location constraints for each one. For each possible location constraint, pair it with an orientation constraint referring to the same object and infer whether to use `align` or `face` by object category. 
 
-**Note**
+<details open>
+<summary>Note</summary>
+<br>
+Employing this restriction introduces an inductive bias that the orientation of an object is/can only be specified in relation to objects that are close in proximity to it. My reasoning for doing this (for now at least) is that objects do not have labelled semantic fronts (for now). It makes more sense to me to try and extract possible orientation constraints based on geometric heuristics when the world space semantic fronts of all the objects are known. Trying to extract orientation constraints from all other objects in the room with only category will (IMO) result in more spurious constraints than ones that actually carry more semantic meaning/may represent a general design principle of the dataset. Also it might make more sense to predict an orientation constraint after a location constraint. 
+</details>
 
-Employing this restriction introduces an inductive bias that the orientation of an object is/can only be specified in relation to objects that are close in proximity to it. My reasoning for doing this (for now at least) is that objects do not have labelled semantic fronts (for now). It makese more sense to me to try an extract an orientation constraint based on geometric heuristics when the world space semantic fronts of all the objects are known. Trying to extract orientation constraints from all other objects in the room with only category will (IMO) result in more spurious constraints than ones that actually carry more semantic meaning/may represent a general design principle of the dataset. Also it might make more sense to predict an orientation constraint after a location constraint because it seems easier to infer. 
+For every object in local vicinity to the current held out object - try and produce a location mask in every possible direction relative to the close object. If the held out object looks like it could possibly come from that mask, mark that location constraint as valid. If the held out object is inside the bounding box of another object -> blah 
 
-Predicting location: 
+Another option for deciding what exact relative directions should be given is to get the world space direction, and then based on the non held out object's rotation convert this direction to object space. 
 
-Orientation rules for each object category 
- * `wardrobe` - 
- * `bed` - 
- * `nightstand` - 
- * `desk` - 
- * `chair` - 
+**Intermediate update (7/13/22)** 
+<details open>
+<summary>Note</summary>
+<br>
+I have not tried extracting the program yet, this is me just hypothesizing looking at the given bedrooms 
+</details>
+
+I think the way directions are specified in the location constraints need to change. I think that they need to be given in terms of the 
