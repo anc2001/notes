@@ -51,7 +51,26 @@ Another option for deciding what exact relative directions should be given is to
 <details open>
 <summary>Note</summary>
 <br>
-I have not tried extracting the program yet, this is me just hypothesizing looking at the given bedrooms 
+I have not tried extracting the program yet, this is me just hypothesizing looking at the given bedrooms and their objects. 
 </details>
 
-I think the way directions are specified in the location constraints need to change. I think that they need to be given in terms of the 
+I think the way directions are specified for location constraints need to change. I think that they need to be given in terms of semantic fronts. 
+
+Color key for all diagrams below. The colors shown on the diagrams are in the coordinate frames of their respective objects. 
+
+![lorem ipsum](diagrams/color_key.png)
+
+In most cases, nighstands appear on the `right` side and `left` side of the bed. 
+
+![lorem ipsum](diagrams/50-SecondBedroom-40617.png)
+![lorem ipsum](diagrams/65-SecondBedroom-17779.png)
+![lorem ipsum](diagrams/76-SecondBedroom-1727.png)
+![lorem ipsum](diagrams/58-MasterBedroom-836.png)
+
+But there are also significant number of rooms where are nightstands appear on the `top` and `bottom` sides of the bed. I'm guessing that this is because beds need not be given in some kind of aligned canonical direction, so semantically the sides that `right`, `left`, `top`, and `bottom` all refer to are devoid of semantic meaning. 
+
+![lorem ipsum](diagrams/51-MasterBedroom-40642.png)
+![lorem ipsum](diagrams/89-SecondBedroom-15023.png)
+![lorem ipsum](diagrams/127-Bedroom-68029.png)
+
+Generating the superset of location constraints that could apply to placing a nighstand would probably appear to be something like `attach(bed, RIGHT | LEFT| TOP | BOTTOM), reachable_by_arm(bed, RIGHT | LEFT| TOP | BOTTOM)` + some constraints relating to other objects. Results like that make some sense to me. I can see nightstands appearing at the foot of a bed and maybe to a lesser degree at the head of the bed. The key thing that I think would invalidate this kind of result is that those constraints didn't appear because a nighstand appeared at the foot of the bed or at the head of the bed. Those constraints appeared because the way directions are specified for location constraints aren't dependent on the semantic fronts of objects. 
