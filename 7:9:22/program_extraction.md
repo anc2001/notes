@@ -76,7 +76,4 @@ But there are also significant number of rooms where are nightstands appear on t
 
 Generating the superset of location constraints that could apply to placing a nighstand would probably appear to be something like `attach(bed, RIGHT | LEFT| TOP | BOTTOM), reachable_by_arm(bed, RIGHT | LEFT| TOP | BOTTOM)` + some constraints relating to other objects. Results like that make some sense to me. I can see nightstands appearing at the foot of a bed and maybe to a lesser degree at the head of the bed. The key thing that I think would invalidate this kind of result is that those constraints didn't appear because a nighstand appeared at the foot of the bed or at the head of the bed. Those constraints appeared because the way directions are specified for location constraints aren't dependent on the semantic fronts of objects. 
 
-I think changing the definition to something like this makes sense 
- * `location_constraint(Object from, Object to, List<Directions>)` 
-
-Also if this change is implemented, program extraction can really only happen if the objects have their semantic fronts labelled. 
+Also, if specifying location constraints requires semantic fronts, program extraction for both location and orientation can really only happen if the objects have their semantic fronts labelled. 
