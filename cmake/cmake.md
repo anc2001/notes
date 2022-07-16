@@ -53,7 +53,7 @@ target_link_libraries(project_name PUBLIC
 **Note:** many references to `Qt` can also be replaced by `Qt${QT_VERSION_MAJOR}` for more specificity. e.g. `Qt${QT_VERSION_MAJOR}::Core`
 
 The main things you will have to edit are
- * `find_package` - QtCreator detects external libraries with this command. This also refers to Qt packages such as `Gui` or `OpenGL`. Use this command to include libraries in your project. 
+ * `find_package` - The project includes external libraries with this command. This also refers to Qt packages such as `Gui` or `OpenGL`. Use this command to include libraries in your project. 
     * ex: `find_package(Qt6 COMPONENTS Core)`
     * This [repo](https://github.com/g-truc/glm) contains a folder `glm`. Placing this folder in the same directory as CMakeLists.txt with `find_package(glm)` in `CMakeLists.txt` should give the project access to the `glm` library. 
  * `add_executable` must have all the `.h` and `.cpp` files in the project included. QtCreator will also not see files not included in this. 
