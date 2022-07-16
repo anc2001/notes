@@ -52,7 +52,7 @@ Another option for deciding what exact relative directions should be given is to
 <details open>
 <summary>Note</summary>
 <br>
-I have not tried extracting the program yet, this is me just hypothesizing looking at the given bedrooms and their objects. 
+I have not tried extracting the program yet, this is just me hypothesizing looking at the given bedrooms and their objects. 
 </details>
 
 I think the way directions are specified for location constraints need to change. I think that they need to be given in terms of semantic fronts. 
