@@ -10,7 +10,6 @@ The occurence metric for each constraint is the total number of times the constr
 
 The filtered results are removing constraints that have an occurence value less than `0.1`. Location constraints have their threshold based on the occurence value for `all`. 
 
-Changes I'm thinking of making follow the results. 
 ## Bed 
 Constraints 
 ```
@@ -317,10 +316,3 @@ face nightstand | occurence: 0.01079136690647482
 face desk | occurence: 0.4
 face wardrobe | occurence: 0.034482758620689655
 ```
-
-# Methodology changes 
-The minimum distance between two objects doesn't seem to be a good way to choose location constraints and the corresponding direction argument. There are a lot of cases where 
-
-Therefore I'm thinking of making this a little more nuanced than just 
-
-Not so much a methodology change but an internal structure change - Minimum distances are found using the room encoding, but 
