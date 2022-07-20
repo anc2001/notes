@@ -8,8 +8,6 @@ Methodology (no subsampling)
 
 The occurence metric for each constraint is the total number of times the constraint appears / the total number of times that particular object co appears. For location constraints `all` is the the total number of times the location constraint appears for any direction /  the total number of times that particular object co appears. 
 
-The filtered results are removing constraints that have an occurence value less than `0.1`. Location constraints have their threshold based on the occurence value for `all`. 
-
 ## Bed 
 Constraints 
 ```
