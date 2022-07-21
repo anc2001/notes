@@ -319,7 +319,8 @@ face wardrobe | occurence: 0.034482758620689655
 Constraints are removed with the following procedure 
 
  * If a constraint for that object type overall appears less than 40 percent of the time, remove it
- * Remaining Location Constraints: divide the occurence in each direction by the overall occurrence. Remove directions that appear less than 25 percent of the time 
+ * Remaining Location Constraints: filtering spurious directions 
+    * divide the occurence in each direction by the overall occurrence value to get a normalized occurence value. Remove directions with a normalized occurence metric less than 0.2. 
 
 ## Bed
 ```
