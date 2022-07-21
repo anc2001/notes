@@ -314,3 +314,128 @@ face nightstand | occurence: 0.01079136690647482
 face desk | occurence: 0.4
 face wardrobe | occurence: 0.034482758620689655
 ```
+
+# Filtering constraints 
+Constraints are removed with the following procedure 
+
+ * If a constraint for that object type overall appears less than 40 percent of the time, remove it
+ * Remaining Location Constraints: divide the occurence in each direction by the overall occurrence. Remove directions that appear less than 25 percent of the time 
+
+## Bed
+```
+attach wall left | occurrence: 0.13901234567901236
+attach wall top | occurrence: 0.174320987654321
+attach wall right | occurrence: 0.194320987654321
+attach wall all | occurrence: 0.5708641975308641
+
+attach nightstand top | occurrence: 0.30428441203281675
+attach nightstand right | occurrence: 0.16226071103008205
+attach nightstand left | occurrence: 0.1626253418413856
+attach nightstand all | occurrence: 0.64102096627165
+
+attach desk top | occurrence: 0.38023952095808383
+attach desk all | occurrence: 0.45808383233532934
+attach bed left | occurrence: 0.25
+attach bed top | occurrence: 0.15
+attach bed all | occurrence: 0.4
+
+reachable chair bottom | occurrence: 0.1962457337883959
+reachable chair right | occurrence: 0.19283276450511946
+reachable chair left | occurrence: 0.21843003412969283
+reachable chair all | occurrence: 0.7030716723549488
+
+reachable bed top | occurrence: 0.25
+reachable bed left | occurrence: 0.5
+reachable bed all | occurrence: 0.8
+
+align wall | occurrence: 0.5708641975308641
+align nightstand | occurrence: 0.5965360072926162
+```
+
+## Chair
+```
+attach desk top | occurrence: 0.49528301886792453
+attach desk all | occurrence: 0.6650943396226415
+
+reachable bed right | occurrence: 0.2440273037542662
+reachable bed top | occurrence: 0.2235494880546075
+reachable bed left | occurrence: 0.2235494880546075
+reachable bed all | occurrence: 0.7030716723549488
+
+reachable chair left | occurrence: 0.12903225806451613
+reachable chair top | occurrence: 0.14516129032258066
+reachable chair right | occurrence: 0.11290322580645161
+reachable chair all | occurrence: 0.45161290322580644
+
+face desk | occurrence: 0.5047169811320755
+```
+
+## Wardrobe 
+```
+attach wall right | occurrence: 0.1541318477251625
+attach wall left | occurrence: 0.15134633240482823
+attach wall top | occurrence: 0.24233983286908078
+attach wall bottom | occurrence: 0.17517796347879913
+attach wall all | occurrence: 0.7229959764778706
+
+attach wardrobe right | occurrence: 0.2932551319648094
+attach wardrobe left | occurrence: 0.30058651026392963
+attach wardrobe all | occurrence: 0.6744868035190615
+
+reachable bed left | occurrence: 0.21231816774992263
+reachable bed right | occurrence: 0.2135561745589601
+reachable bed all | occurrence: 0.4818941504178273
+
+align wall | occurrence: 0.7229959764778706
+align wardrobe | occurrence: 0.6187683284457478
+```
+
+## Nightstand 
+```
+attach wall left | occurrence: 0.1601605253557096
+attach wall top | occurrence: 0.19153593578985773
+attach wall right | occurrence: 0.21141919007661436
+attach wall all | occurrence: 0.6497628602699744
+
+attach bed left | occurrence: 0.295897903372835
+attach bed right | occurrence: 0.2999088422971741
+attach bed all | occurrence: 0.6408386508659982
+
+reachable bed left | occurrence: 0.47675478577939834
+reachable bed right | occurrence: 0.46873290793072014
+reachable bed all | occurrence: 0.9941659070191431
+
+align wall | occurrence: 0.6497628602699744
+align bed | occurrence: 0.9371011850501367
+```
+
+## Desk
+```
+attach wall right | occurrence: 0.18674698795180722
+attach wall bottom | occurrence: 0.1897590361445783
+attach wall left | occurrence: 0.1897590361445783
+attach wall all | occurrence: 0.7018072289156626
+
+attach bed left | occurrence: 0.16766467065868262
+attach bed right | occurrence: 0.16167664670658682
+attach bed all | occurrence: 0.4431137724550898
+
+attach chair top | occurrence: 0.41037735849056606
+attach chair all | occurrence: 0.660377358490566
+
+attach desk right | occurrence: 0.2
+attach desk top | occurrence: 0.3
+attach desk all | occurrence: 0.6
+
+reachable bed left | occurrence: 0.23952095808383234
+reachable bed top | occurrence: 0.20958083832335328
+reachable bed right | occurrence: 0.25449101796407186
+
+reachable bed all | occurrence: 0.7305389221556886
+reachable chair top | occurrence: 0.660377358490566
+reachable chair all | occurrence: 0.9386792452830188
+
+align wall | occurrence: 0.7018072289156626
+face chair | occurrence: 0.7075471698113207
+face desk | occurrence: 0.4
+```
