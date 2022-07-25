@@ -116,25 +116,38 @@ align nightstand | occurrence: 0.8270211216314639
 </table>
 
 ## Removed Constraints 
-`attach nightstand top` and `attach nightstand bottom`
+```
+attach nightstand top | occurrence: 0.03932993445010925
+attach nightstand bottom | occurrence: 0.02530954115076475
 
+attach chair all | occurrence: 0.2927241962774958
+
+attach wardrobe all | occurrence: 0.12357473035439137
+
+attach desk bottom | occurrence: 0.011976047904191617
+
+reachable bed bottom | occurrence: 0.05
+reachable bed right | occurrence: 0.05
+
+align wardrobe | occurrence: 0.01694915254237288
+align desk | occurrence: 0.3263473053892216
+align chair | occurrence: 0.25042301184433163
+align bed | occurrence: 0.1
+
+face chair | occurrence: 0.25042301184433163
+face nightstand | occurrence: 0.012199563000728332
+face wardrobe | occurrence: 0.01448382126348228
+face desk | occurrence: 0.10479041916167664
+face bed | occurrence: 0.2
+```
 ![temp](diagrams/8-MasterBedroom-19148.png)
-
-`attach chair all`
-
 ![temp](diagrams/437-MasterBedroom-7015.png)
-
-`attach wardrobe all`
-
 ![temp](diagrams/668-MasterBedroom-20130.png)
-
-`attach desk bottom`
 ![temp](diagrams/185-MasterBedroom-24539.png)
-
-`reachable bed bottom` and `reachable bed right`
 ![temp](diagrams/45-SecondBedroom-51128.png)
-
-`align wardrobee desk chair bed` and `face chair nightstand wardrobe desk bed`
+![temp](diagrams/235-SecondBedroom-1314.png)
+![temp](diagrams/263-Bedroom-22136.png)
+![temp](diagrams/257-SecondBedroom-10798.png)
 
 # Chair
 <table>
