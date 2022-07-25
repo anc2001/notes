@@ -387,6 +387,30 @@ face desk | occurrence: 0.4
 </tr>
 </table>
 
+## Removed Constraints 
+```
+attach wardrobe all | occurrence: 0.16666666666666666
+
+attach nightstand all | occurrence: 0.07526881720430108
+
+attach desk left | occurrence: 0.1
+
+reachable bed bottom | occurrence: 0.10778443113772455
+
+reachable chair left | occurrence: 0.03686635944700461
+reachable chair right | occurrence: 0.07373271889400922
+reachable chair bottom | occurrence: 0.17972350230414746
+
+align wardrobe | occurrence: 0.042735042735042736
+align bed | occurrence: 0.38622754491017963
+align nightstand | occurrence: 0.06093189964157706
+align chair | occurrence: 0.14285714285714285
+
+face bed | occurrence: 0.18862275449101795
+face nightstand | occurrence: 0.010752688172043012
+face wardrobe | occurrence: 0.03418803418803419
+```
+
 # Nightstand 
 <table>
 <tr>
