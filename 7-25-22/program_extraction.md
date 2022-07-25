@@ -146,7 +146,6 @@ face bed | occurrence: 0.2
 ![temp](diagrams/185-MasterBedroom-24539.png)
 ![temp](diagrams/45-SecondBedroom-51128.png)
 ![temp](diagrams/235-SecondBedroom-1314.png)
-![temp](diagrams/263-Bedroom-22136.png)
 ![temp](diagrams/257-SecondBedroom-10798.png)
 
 # Chair
