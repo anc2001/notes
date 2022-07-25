@@ -115,6 +115,22 @@ align nightstand | occurrence: 0.8270211216314639
 </tr>
 </table>
 
+## Removed Constraints 
+`attach nightstand top` and `attach nightstand bottom`
+
+![temp](diagrams/8-MasterBedroom-19148.png)
+
+`attach chair all`
+
+![temp]()
+
+`attach wardrobe all`
+
+![temp]()
+
+`attach desk bottom`
+![temp]()
+
 # Chair
 <table>
 <tr>
