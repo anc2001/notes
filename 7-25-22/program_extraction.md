@@ -122,14 +122,19 @@ align nightstand | occurrence: 0.8270211216314639
 
 `attach chair all`
 
-![temp]()
+![temp](diagrams/437-MasterBedroom-7015.png)
 
 `attach wardrobe all`
 
-![temp]()
+![temp](diagrams/668-MasterBedroom-20130.png)
 
 `attach desk bottom`
-![temp]()
+![temp](diagrams/185-MasterBedroom-24539.png)
+
+`reachable bed bottom` and `reachable bed right`
+![temp](diagrams/45-SecondBedroom-51128.png)
+
+`align wardrobee desk chair bed` and `face chair nightstand wardrobe desk bed`
 
 # Chair
 <table>
