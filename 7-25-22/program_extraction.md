@@ -239,6 +239,47 @@ face desk | occurrence: 0.4976958525345622
 </tr>
 </table>
 
+## Removed Constraints
+```
+attach wall right | occurrence: 0.04786324786324787
+attach wall top | occurrence: 0.04786324786324787
+attach wall bottom | occurrence: 0.05982905982905983
+attach wall left | occurrence: 0.05641025641025641
+
+attach desk left | occurrence: 0.03686635944700461
+attach desk bottom | occurrence: 0.07373271889400922
+attach desk right | occurrence: 0.013824884792626729
+
+attach bed all | occurrence: 0.18781725888324874
+
+attach wardrobe all | occurrence: 0.05656108597285068
+
+attach nightstand all | occurrence: 0.024615384615384615
+
+attach chair all | occurrence: 0.03225806451612903
+
+reachable bed bottom | occurrence: 0.011844331641285956
+
+align bed | occurrence: 0.25042301184433163
+align chair | occurrence: 0.16129032258064516
+align nightstand | occurrence: 0.009230769230769232
+align desk | occurrence: 0.0967741935483871
+
+face bed | occurrence: 0.25042301184433163
+face wardrobe | occurrence: 0.03619909502262444
+face nightstand | occurrence: 0.007692307692307693
+face chair | occurrence: 0.03225806451612903
+```
+
+![temp](diagrams/405-SecondBedroom-86.png)
+![temp](diagrams/580-MasterBedroom-5562.png)
+![temp](diagrams/565-SecondBedroom-16593.png)
+![temp](diagrams/235-SecondBedroom-1314.png)
+![temp](diagrams/937-MasterBedroom-8184.png)
+![temp](diagrams/1180-MasterBedroom-3073.png)
+![temp](diagrams/1255-MasterBedroom-21019.png)
+![temp](diagrams/1358-Bedroom-9169.png)
+
 # Desk
 <table>
 <tr>
