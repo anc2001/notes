@@ -15,7 +15,9 @@ For walls, do not consider the overall appearance and only remove the constraint
 <th>Removed Constraints</th>
 <th>Remaing Constraints</th>
 </tr>
+
 <tr>
+
 <td>
 
 ```
@@ -86,49 +88,7 @@ bed face bed | occurrence: 0.2
 </td>
 
 <td>
-```
-bed attach to nightstand's top side | occurrence: 0.03932993445010925
-bed attach to nightstand's bottom side | occurrence: 0.02530954115076475
-
-bed attach to chair's bottom side | occurrence: 0.08121827411167512
-bed attach to chair's right side | occurrence: 0.08798646362098139
-bed attach to chair's top side | occurrence: 0.050761421319796954
-bed attach to chair's left side | occurrence: 0.0727580372250423
-bed attach to chair's  side | occurrence: 0.2927241962774958
-
-bed attach to wardrobe's top side | occurrence: 0.09306625577812018
-bed attach to wardrobe's left side | occurrence: 0.012634822804314329
-bed attach to wardrobe's bottom side | occurrence: 0.005855161787365178
-bed attach to wardrobe's right side | occurrence: 0.01201848998459168
-bed attach to wardrobe's  side | occurrence: 0.12357473035439137
-
-bed attach to desk's bottom side | occurrence: 0.011976047904191617
-
-bed attach to bed's bottom side | occurrence: 0.05
-
-bed reachable by arm from chair's top side | occurrence: 0.116751269035533
-
-bed reachable by arm from bed's right side | occurrence: 0.05
-bed reachable by arm from bed's bottom side | occurrence: 0.05
-
-bed aligned with wardrobe | occurrence: 0.01694915254237288
-
-bed aligned with desk | occurrence: 0.3263473053892216
-
-bed aligned with chair | occurrence: 0.25042301184433163
-
-bed aligned with bed | occurrence: 0.1
-
-bed face chair | occurrence: 0.25042301184433163
-
-bed face nightstand | occurrence: 0.012199563000728332
-
-bed face wardrobe | occurrence: 0.01448382126348228
-
-bed face desk | occurrence: 0.10479041916167664
-
-bed face bed | occurrence: 0.2
-```
+?
 </td>
 
 <td>
