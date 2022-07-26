@@ -86,6 +86,7 @@ bed face bed | occurrence: 0.2
 </td>
 
 <td>
+```
 bed attach to nightstand's top side | occurrence: 0.03932993445010925
 bed attach to nightstand's bottom side | occurrence: 0.02530954115076475
 
@@ -127,6 +128,7 @@ bed face wardrobe | occurrence: 0.01448382126348228
 bed face desk | occurrence: 0.10479041916167664
 
 bed face bed | occurrence: 0.2
+```
 </td>
 
 <td>
