@@ -88,10 +88,6 @@ bed face bed | occurrence: 0.2
 </td>
 
 <td>
-?
-</td>
-
-<td>
 
 ```
 bed attach to nightstand's right side | occurrence: 0.40258557902403497
