@@ -30,6 +30,17 @@ The sequence representation follows the same format as [SceneFormer](https://arx
 
 I also considered just a single input sequence where each token generated is concatenated to the same sequence. 
 
+**Constraint sequence representation**
+1. Single input sequence 
+```
+start attach, bed, right attach, bed, left align, bed, e top 
+```
+During training tokens generated are just concatenated 
+
+2. SceneFormer style sequence generation described above 
+
+3. Single embedding per constraint, but instead of shifting each input sequence to the left to condition on the current constraint, just have empty tokens during training for unfilled arguments 
+
 ## Constraint Sequence Ordering 
 The list of constraints will be ordered `attach`, `reachable_by_arm`, `align`, and `face`. For constraints of the same type they will be ordered by object according to (a) the canonical ordering according to average size and frequency in the dataset (b) the size of the object (biggest to largest) if two objects of the same category exist for that constraint type. For location constraints of both the same type and object, constraints are ordered by direction going `right`, `top`, `left`, `bottom`. 
 
