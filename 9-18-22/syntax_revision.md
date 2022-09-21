@@ -16,13 +16,14 @@ A full expression is a sequence of tokens that can be executed in isolation. Exa
 
 ## Example programs 
 ### Ex 1
-Input object sequence 
+**Input sequence**
 ```
 (bed query object)
 [wall, bed] 
 ```
 
-Target Sequences 
+**Target Sequences**
+
 For humans 👨
 ```
 attach(bed, wall, all) && align(bed, wall)
@@ -37,13 +38,14 @@ align(bed, wall, all) -> [3, 1, 0, 4]
 ```
 
 ### Ex 2
-Input object sequence
+**Input sequence**
 ```
 (chair query object)
 [wall, sofa, table, cabinet, chair]
 ```
 
-Target Sequences 
+**Target Sequences** 
+
 For humans 👨
 ```
 mask1 = reachable_by_arm(chair, sofa, LEFT) || reachable_by_arm(chair, sofa, RIGHT)
