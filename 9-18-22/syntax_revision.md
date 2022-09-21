@@ -31,7 +31,7 @@ attach(bed, wall, all) && align(bed, wall)
 
 For computer 🖥️
 ```
-sos and c c
+sos and c c eos
 
 attach(bed, wall, all) -> [0, 1, 0, 4]
 align(bed, wall, all) -> [3, 1, 0, 4]
@@ -74,3 +74,16 @@ face(chair, cabinet) -> [4, 4, 3, 4]
 The input to the decoder is now just a structure sequence. Each of the heads associated with a constraint token are fed to the constraint decoder to get the constraint arguments. 
 
 ![temp](diagrams/network.png)
+
+# Program Extraction
+Possible tokens rules for naive extract
+
+The most constraining program 
+ - Intersect location masks of all objects in vicinity 
+ - Intersect that mask with whatever orientation constraint that describes the current orientation of the room
+
+The process will ensure a program with valid placement, but low internal diversity (same spot every time). This fed to neural network might see some generalization capability? 
+
+If not, we can introduce other placement options 
+ * Find superset of all possible constraints globally (done, to an extent), and randomly (or by some heuristic?) union these constraints with the most constraining program 
+ * Find `n` other most similar rooms, and for other objects of the same type, get the most constraining programs and combine the programs together. For example, take two rooms with similar room geometry and objects, but with chairs in different places. The chair might be in the corner for one and in front of the desk for another. We can take the programs for both and just union the mask together? 
