@@ -499,9 +499,12 @@ logit: -6.085571765899658, vocab: null
 ## Experiment 3 Results (Bed resize and shift)
 I've included these results as gifs because they're just a lot to go through. Generally the same conclusion holds for these objects as well that the model is randomly guessing left or right. 
 
-![](experiment_3/rot_0.mp4)
+No rotation
+https://user-images.githubusercontent.com/71151378/218005770-51f37fd0-f691-4f4c-9f1f-8bc7fcfb68bd.mp4
 
-![](experiment_3/rot_1.mp4)
+Rotation 
+https://user-images.githubusercontent.com/71151378/218005807-4a0dc3d0-4421-437b-bb6b-cf0b20fee937.mp4
+
 
 # Conclusions / Thoughts
 - I think the model would benefit from some kind of data augmentation with the introduction of noise to the data. I think noise in the form of slight object size, position, and orientation perterbations would help the model generalize. It seems that specific sizes of the bed are associated with specific programs, and this noise might prevent that. Also random rotations of the room might help as well. 
