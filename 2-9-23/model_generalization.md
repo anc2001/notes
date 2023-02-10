@@ -508,10 +508,10 @@ https://user-images.githubusercontent.com/71151378/218005807-4a0dc3d0-4421-437b-
 
 # Conclusions / Thoughts
 - I think the model would benefit from some kind of data augmentation with the introduction of noise to the data. I think noise in the form of slight object size, position, and orientation perterbations would help the model generalize. It seems that specific sizes of the bed are associated with specific programs, and this noise might prevent that. Also random rotations of the room might help as well. 
+    - Another form of noise that I think might be interesting to try involves switching left and right children randomly. Since both `and` and `or` operators are communative, this won't change the program output, just the order of attributes to be predicted. 
 
 - The model seems capable of reasoning about the floor space to a certain extent, but is severely limited. The logits seem to indicate the model is really just guessing whether the right or left side is correct 
  
-- I have some ideas for changing the object encoding. 
+- Object encoding. 
     - I think it's really hard to come up with some kind of global room wide encoding/feature space that contains all of the pertinent information that the network would need to use to predict these programs. It might be easier to encode how much empty space is available on each of the 4 sides of an object's bounding box and add that to the encoding. This way the network won't have to do arithmetic to figure out which side of an object contains free space. 
-    - The wall 
-- 
+    - For encoding the walls, Daniel's idea of treating each segment as a bounding box seems more reasonable and intuitive than coming up with some kind of top down encoding scheme, though it doesn't hurt to try one. 
